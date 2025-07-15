@@ -105,7 +105,7 @@ export function Header() {
           <ul className="flex gap-10 text-xs">
             <NavLink href="/#portfolio" label="Portfólio" />
             <NavLink href="/#contact" label="Contato" />
-            <NavLink href="/#about" label="Sobre Mim" />
+            <NavLink href="/#about" label="About" />
           </ul>
         </nav>
 

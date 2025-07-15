@@ -62,9 +62,7 @@ export default function SkillsIcons() {
                 size={28}
                 className="text-white transition-transform duration-300 group-hover:scale-110"
               />
-              <span className="text-sm font-bold leading-tight">
-                {label}
-              </span>
+              <span className="text-sm font-bold leading-tight">{label}</span>
             </motion.div>
           ))}
         </div>
@@ -87,7 +85,7 @@ export default function SkillsIcons() {
                 className="flex items-center justify-center h-[120px] px-4 group transition-transform hover:scale-110"
               >
                 <Icon
-                  size={72}
+                  size={120}
                   className="text-black group-hover:text-[var(--color)] transition-colors duration-300"
                   style={{ "--color": color } as React.CSSProperties}
                   title={name}
@@ -98,19 +96,19 @@ export default function SkillsIcons() {
         </div>
 
         {/* Mobile version: Static icons with heading */}
-        <div className="block md:hidden bg-white rounded-sm px-7 py-4 text-black">
-          <h2 className="text-lg font-semibold mb-3">Hard Skills</h2>
-          <div className="flex flex-wrap justify-center gap-2">
+        <div className="block md:hidden bg-white rounded-sm px-5 py-4 text-black">
+          {/* ícones */}
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-3">
             {skills.map(({ name, icon: Icon, color }, i) => (
               <div
-                key={i + name}
+                key={`${i}-${name}`}
                 className="group transition-transform hover:scale-110"
+                title={name}
               >
                 <Icon
-                  size={20}
+                  size={21}
                   className="text-black group-hover:text-[var(--color)] transition-colors duration-300"
                   style={{ "--color": color } as React.CSSProperties}
-                  title={name}
                 />
               </div>
             ))}
