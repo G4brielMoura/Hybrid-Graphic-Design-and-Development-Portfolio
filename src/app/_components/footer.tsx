@@ -109,7 +109,7 @@ export default function HeroSection() {
             alt={project.title}
             fill
             sizes="(max-width: 768px) 65vw"
-            className="object-cover"
+            className="object-cover "
             priority
           />
           <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black/80 to-transparent" />
@@ -161,7 +161,7 @@ export default function HeroSection() {
         <motion.div
           onHoverStart={() => setHover(true)}
           onHoverEnd={() => setHover(false)}
-          className="relative w-full h-[500px] rounded-2xl overflow-hidden bg-black shadow-lg"
+          className="relative w-full h-[500px] rounded-0 overflow-hidden bg-black shadow-lg"
         >
           <Image
             src={project.image}
@@ -231,7 +231,7 @@ export default function HeroSection() {
             href="#"
             className="bg-zinc-800 hover:bg-zinc-700 p-6 rounded-lg relative"
           >
-            <div className="text-lg font-extrabold text-white">
+            <div className="text-3xl font-extrabold text-white">
               PROJECTS WORK
             </div>
             <motion.div
@@ -243,10 +243,10 @@ export default function HeroSection() {
           </Link>
 
           <Link
-            href="#"
+            href="/contacts"
             className="bg-zinc-800 hover:bg-zinc-700 p-6 rounded-lg relative"
           >
-            <div className="text-lg font-extrabold text-white">CONTACT US</div>
+            <div className="text-3xl font-extrabold text-white">CONTACT US</div>
             <motion.div
               whileTap={{ scale: 0.9 }}
               className="absolute bottom-6 right-6 text-white text-2xl"
@@ -256,7 +256,7 @@ export default function HeroSection() {
           </Link>
 
           <div className="bg-zinc-800 p-6 rounded-lg text-white">
-            <div className="font-extrabold text-lg">GABRIEL MOURA</div>
+            <div className="font-extrabold text-3xl">GABRIEL MOURA</div>
             <div className="text-sm mt-2">
               I'm a{" "}
               <span className="font-bold">
@@ -279,7 +279,7 @@ export default function HeroSection() {
             href="#"
             className="bg-zinc-800 hover:bg-zinc-700 p-6 rounded-lg relative"
           >
-            <div className="text-lg font-extrabold text-white">ABOUT ME</div>
+            <div className="text-3xl font-extrabold text-white">ABOUT ME</div>
             <motion.div
               whileTap={{ scale: 0.9 }}
               className="absolute bottom-6 right-6 text-white text-2xl"

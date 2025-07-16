@@ -7,6 +7,10 @@
   user-select:none;
 }
 
+
+
+
+
 @theme inline {
   --color-background: #0d0d0d;
   --color-foreground: var(--foreground);

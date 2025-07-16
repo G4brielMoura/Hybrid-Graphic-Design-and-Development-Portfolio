@@ -9,15 +9,14 @@ return (
 
       <PageWrapper>
 
-        <main>
+        <div className="max-w-screen-xl xl:max-w-[1102px] mx-auto  sm:px-6 lg:px-8">
 
             <Header />
             
             <AboutMe />
-
-            <Footer />
-
-        </main>
+        
+        </div>
+        
 
       </PageWrapper>
 

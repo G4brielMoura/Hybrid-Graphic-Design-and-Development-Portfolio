@@ -4,12 +4,16 @@ import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import { Code2, Sun } from "lucide-react"
-import { motion } from "framer-motion"
+import { motion, useAnimation } from "framer-motion"
 
 export function Header() {
   const [isCode, setIsCode] = useState(true)
   const [clock, setClock] = useState("--:--")
+  const [hearts, setHearts] = useState<
+    { delay: number; size: number; xStart: number; duration: number }[]
+  >([])
 
+  /* ─────────── Relógio ─────────── */
   useEffect(() => {
     const update = () => {
       const now = new Date()
@@ -20,6 +24,17 @@ export function Header() {
     update()
     const t = setInterval(update, 60_000)
     return () => clearInterval(t)
+  }, [])
+
+  /* ─────────── Corações animados ─────────── */
+  useEffect(() => {
+    const generated = Array.from({ length: 6 }, (_, i) => ({
+      delay: i * 1.2,
+      size: 10 + Math.random() * 10,
+      xStart: (Math.random() * 40 - 20) | 0,
+      duration: 6 + Math.random() * 4,
+    }))
+    setHearts(generated)
   }, [])
 
   const NavLink = ({ href, label }: { href: string; label: string }) => (
@@ -34,14 +49,28 @@ export function Header() {
           initial={{ scaleX: 0 }}
           whileHover={{ scaleX: 1 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
-          className="absolute left-0 top-0 h-full w-full origin-left scale-x-0 rounded bg-zinc-800 group-hover:scale-x-100 z-0"
+          className="absolute left-0 top-0 h-full w-full origin-left rounded bg-zinc-800 z-0"
         />
       </Link>
     </li>
   )
 
+  /* ─────────── Seta animada no botão "Send" ─────────── */
+  const arrowControls = useAnimation()
+
+  useEffect(() => {
+    arrowControls.start({
+      x: [-5, 0, -5],
+      transition: { repeat: Infinity, duration: 1.5 },
+    })
+  }, [arrowControls])
+
+  const handleSendClick = () => {
+    arrowControls.start({ x: 8, transition: { duration: 0.25 } })
+  }
+
   return (
-    <header className="w-full px-4 pt-3 text-sm font-light">
+    <header className="w-full pt-3 text-sm font-light">
       <div className="flex flex-col gap-4 md:grid md:grid-cols-3 md:items-center md:gap-6">
         {/* MOBILE */}
         <div className="md:hidden flex items-center justify-between rounded bg-zinc-900 px-4 py-4 border border-zinc-700/40">
@@ -73,7 +102,7 @@ export function Header() {
           </button>
         </div>
 
-        {/* COLUNA 1 */}
+        {/* COLUNA 1 */}
         <div className="hidden md:flex items-center gap-4 px-6 py-3">
           <Image
             src="/images/Icon_gm.png"
@@ -100,34 +129,74 @@ export function Header() {
           </div>
         </div>
 
-        {/* COLUNA 2 */}
-        <nav className="hidden md:flex justify-center">
+        {/* COLUNA 2 */}
+        <nav className="hidden md:flex whitespace-nowrap justify-center">
           <ul className="flex gap-10 text-xs">
-            <NavLink href="/#portfolio" label="Portfólio" />
-            <NavLink href="/#contact" label="Contato" />
-            <NavLink href="/#about" label="About" />
+            <NavLink href="/#page" label="Home" />
+            <NavLink href="/portfolio" label="Portfólio" />
+            <NavLink href="/contacts" label="Contato" />
+            <NavLink href="/about" label="About‑me" />
           </ul>
         </nav>
 
-        {/* COLUNA 3 */}
+        {/* COLUNA 3 */}
         <div className="hidden md:flex justify-end">
           <Link
-            href="/contacts"
-            className="group relative inline-flex items-center gap-2 px-5 py-2 font-medium text-zinc-100 hover:text-white"
+            href="mailto:seuemail@exemplo.com"
+            className="group relative inline-flex items-center gap-2 px-6 py-2 font-semibold
+              text-zinc-100 overflow-hidden rounded-full backdrop-blur-sm
+              ring-1 ring-inset ring-zinc-500/30 hover:ring-blue-500/60
+              transition-colors select-none"
+            onClick={handleSendClick}
           >
-            <span className="relative z-10">Contato</span>
+            {/* brilho interno */}
+            <motion.span
+              initial={{ scale: 0 }}
+              whileHover={{ scale: 3 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              className="absolute inset-0 bg-blue-500/10 rounded-full pointer-events-none"
+            />
+
+            {/* corações animados */}
+            {hearts.map(({ delay, size, xStart, duration }, i) => (
+              <motion.span
+                key={i}
+                initial={{ y: 40, opacity: 0, x: xStart }}
+                animate={{ y: -60, opacity: [0, 1, 0] }}
+                transition={{
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  delay,
+                  duration,
+                  ease: "easeInOut",
+                }}
+                className="absolute left-1/2 top-1/2 pointer-events-none"
+                style={{ width: size, height: size, marginLeft: -size / 2 }}
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  className="w-full h-full fill-pink-500/60 text-pink-500/80"
+                >
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                </svg>
+              </motion.span>
+            ))}
+
+            {/* texto */}
+            <span className="relative z-10 transition-colors duration-200 group-hover:text-blue-400">
+              Send
+            </span>
+
+            {/* seta */}
             <motion.svg
-              initial={{ x: -5 }}
-              animate={{ x: 0 }}
-              transition={{
-                repeat: Infinity,
-                duration: 1.5,
-                repeatType: "reverse",
-              }}
-              className="w-4 h-4 z-10 relative"
+              initial={{ x: -5, stroke: "#d4d4d8" }}
+              animate={arrowControls}
+              whileHover={{ x: 5, stroke: "#d4d4d8" }}
+              whileTap={{ x: 8 }}
+              transition={{ type: "spring", stiffness: 200, damping: 15 }}
+              className="w-4 h-4 z-10 mt-0.5 relative"
               fill="none"
               viewBox="0 0 24 24"
-              stroke="currentColor"
               strokeWidth={2}
             >
               <path
@@ -136,12 +205,6 @@ export function Header() {
                 d="M17 8l4 4m0 0l-4 4m4-4H3"
               />
             </motion.svg>
-            <motion.span
-              initial={{ scaleX: 0 }}
-              whileHover={{ scaleX: 1 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-              className="absolute left-0 top-0 h-full w-full origin-left scale-x-0 rounded bg-zinc-800 group-hover:scale-x-100 z-0"
-            />
           </Link>
         </div>
       </div>

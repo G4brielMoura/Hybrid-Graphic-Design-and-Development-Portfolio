@@ -1,4 +1,4 @@
-
+"use client"
 export default function AboutMe() {
   return (
     <section className="bg-[#0d0d0d] min-h-screen text-white flex flex-col items-center justify-center px-4 py-12 text-center">

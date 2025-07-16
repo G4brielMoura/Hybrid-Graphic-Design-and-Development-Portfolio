@@ -71,21 +71,23 @@ export default function SkillsIcons() {
         <div className="relative overflow-hidden rounded-sm bg-white flex-1 ml-0 hidden md:block">
           <motion.div
             className="flex gap-10 py-5"
-            animate={{ x: ["0%", "-50%"] }}
+            /* move da posição inicial até metade da largura total —
+               duas cópias são suficientes para loop contínuo        */
+            animate={{ x: ["0%", "-300%"] }}
             transition={{
               repeat: Infinity,
               repeatType: "loop",
               ease: "linear",
-              duration: 20,
+              duration: 50, // ajuste a velocidade se quiser
             }}
           >
             {[...skills, ...skills].map(({ name, icon: Icon, color }, i) => (
               <div
-                key={i + name}
+                key={`${i}-${name}`}
                 className="flex items-center justify-center h-[120px] px-4 group transition-transform hover:scale-110"
               >
                 <Icon
-                  size={120}
+                  size={100}
                   className="text-black group-hover:text-[var(--color)] transition-colors duration-300"
                   style={{ "--color": color } as React.CSSProperties}
                   title={name}
@@ -97,7 +99,6 @@ export default function SkillsIcons() {
 
         {/* Mobile version: Static icons with heading */}
         <div className="block md:hidden bg-white rounded-sm px-5 py-4 text-black">
-          {/* ícones */}
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-3">
             {skills.map(({ name, icon: Icon, color }, i) => (
               <div
