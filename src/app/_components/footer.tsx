@@ -5,6 +5,7 @@ import Link from "next/link"
 import { useEffect, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Code2 } from "lucide-react"
+// import Directone  from "../_components/directone";
 import {
   FaWhatsapp,
   FaLinkedin,
@@ -153,7 +154,13 @@ export default function HeroSection() {
             </motion.a>
           ))}
         </div>
+
+        
       </div>
+
+      {/* <div className=" flex flex-col gap-4">
+      
+      </div> */}
 
       {/* ─────────── DESKTOP (≥ md) ─────────── */}
       <div className="hidden md:grid md:grid-cols-2 gap-4">

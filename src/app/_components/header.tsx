@@ -70,10 +70,10 @@ export function Header() {
   }
 
   return (
-    <header className="w-full pt-3 text-sm font-light">
-      <div className="flex flex-col gap-4 md:grid md:grid-cols-3 md:items-center md:gap-6">
+    <header className="w-full pt-4  text-sm font-light">
+      <div className="flex flex-col gap-3 md:grid md:grid-cols-3 md:items-center md:gap-6">
         {/* MOBILE */}
-        <div className="md:hidden flex items-center justify-between rounded bg-zinc-900 px-4 py-4 border border-zinc-700/40">
+        <div className="md:hidden mx-4 flex items-center justify-between rounded bg-zinc-900 px-4 py-4 border border-zinc-700/40">
           <div className="flex items-center gap-3">
             <Image
               src="/images/Icon_gm.png"
