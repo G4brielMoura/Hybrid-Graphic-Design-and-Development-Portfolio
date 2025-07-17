@@ -47,7 +47,7 @@ const designProjects = [
   {
     title: "Identidade Visual",
     subtitle: "Marca & Branding",
-    image: "/images/design1.jpg",
+    image: "/images/post5.jpg",
     url: "https://example.com/design1",
     techs: [{ icon: <FaFigma />, color: "#a259ff" }],
     miniDescription: "Criação de logotipo e guia visual.",
@@ -55,7 +55,7 @@ const designProjects = [
   {
     title: "UI App Fitness",
     subtitle: "Mobile Experience",
-    image: "/images/design2.jpg",
+    image: "/images/logo6.jpg",
     url: "https://example.com/design2",
     techs: [{ icon: <FaFigma />, color: "#a259ff" }],
     miniDescription: "Protótipo interativo no Figma.",
@@ -63,7 +63,7 @@ const designProjects = [
   {
     title: "Landing Design",
     subtitle: "Interface moderna",
-    image: "/images/design3.jpg",
+    image: "/images/vintage4.jpg",
     url: "https://example.com/design3",
     techs: [{ icon: <FaFigma />, color: "#a259ff" }],
     miniDescription: "Layout para conversão de leads.",
@@ -97,7 +97,7 @@ export default function Portfolio() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3 }}
-                className="absolute top-2 right-2 z-30"
+                className="absolute top-4 right-5 z-30"
               >
                 <Link
                   href={project.url || "#"}
@@ -105,8 +105,11 @@ export default function Portfolio() {
                   rel="noopener noreferrer"
                   className="
                     px-3 py-1 rounded-full text-xs font-semibold shadow 
-                    bg-white/90 text-black backdrop-blur-sm transition-all
-                    md:opacity-0 md:group-hover:opacity-100
+  bg-white/90 text-black backdrop-blur-sm 
+  transition-all duration-300 ease-in-out
+  hover:bg-white hover:shadow-md hover:scale-[1.03]
+  cursor-pointer
+  md:opacity-0 md:group-hover:opacity-100
                   "
                 >
                   Ver projeto

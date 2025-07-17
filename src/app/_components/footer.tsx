@@ -65,7 +65,7 @@ const rotatingProjectsDesign = [
     url: "https://example.com/design1",
     description: "Criação de identidade visual completa para marca moderna.",
     techs: [],
-    image: "/images/design1.jpg",
+    image: "/images/logo1.jpg",
   },
   {
     title: "Behance Showcase",
@@ -73,7 +73,7 @@ const rotatingProjectsDesign = [
     url: "https://behance.net/",
     description: "Apresentação visual com foco em layout e cor.",
     techs: [],
-    image: "/images/design2.jpg",
+    image: "/images/logo2.jpg",
   },
   {
     title: "Motion Graphics Reel",
@@ -81,7 +81,7 @@ const rotatingProjectsDesign = [
     url: "https://example.com/design3",
     description: "Animações promocionais para mídias sociais e vídeos.",
     techs: [],
-    image: "/images/design3.jpg",
+    image: "/images/logo3.jpg",
   },
 ]
 

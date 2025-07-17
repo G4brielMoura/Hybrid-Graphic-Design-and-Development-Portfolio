@@ -26,9 +26,7 @@ import {
 } from "react-icons/si"
 
 const devSkills = [
-  { name: "HTML", icon: SiHtml5, color: "#e34c26" },
-  { name: "CSS", icon: SiCss3, color: "#264de4" },
-  { name: "JavaScript", icon: SiJavascript, color: "#f7df1e" },
+  
   { name: "React", icon: SiReact, color: "#61dafb" },
   { name: "Next.js", icon: SiNextdotjs, color: "#000000" },
   { name: "Node.js", icon: SiNodedotjs, color: "#68a063" },
