@@ -3,17 +3,19 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
-import { Code2, Sun } from "lucide-react"
-import { motion, useAnimation } from "framer-motion"
+
+import { motion, useAnimation, AnimatePresence } from "framer-motion"
+import { useMode } from "@/lib/ModeContext"
+import { Code2, Pencil } from "lucide-react"
 
 export function Header() {
-  const [isCode, setIsCode] = useState(true)
+  const { mode, toggleMode } = useMode()
+  const isDevelop = mode === "develop"
   const [clock, setClock] = useState("--:--")
   const [hearts, setHearts] = useState<
     { delay: number; size: number; xStart: number; duration: number }[]
   >([])
 
-  /* ─────────── Relógio ─────────── */
   useEffect(() => {
     const update = () => {
       const now = new Date()
@@ -26,7 +28,6 @@ export function Header() {
     return () => clearInterval(t)
   }, [])
 
-  /* ─────────── Corações animados ─────────── */
   useEffect(() => {
     const generated = Array.from({ length: 6 }, (_, i) => ({
       delay: i * 1.2,
@@ -36,6 +37,18 @@ export function Header() {
     }))
     setHearts(generated)
   }, [])
+
+  const arrowControls = useAnimation()
+  useEffect(() => {
+    arrowControls.start({
+      x: [-5, 0, -5],
+      transition: { repeat: Infinity, duration: 1.5 },
+    })
+  }, [arrowControls])
+
+  const handleSendClick = () => {
+    arrowControls.start({ x: 8, transition: { duration: 0.25 } })
+  }
 
   const NavLink = ({ href, label }: { href: string; label: string }) => (
     <li className="relative overflow-hidden">
@@ -55,22 +68,23 @@ export function Header() {
     </li>
   )
 
-  /* ─────────── Seta animada no botão "Send" ─────────── */
-  const arrowControls = useAnimation()
-
-  useEffect(() => {
-    arrowControls.start({
-      x: [-5, 0, -5],
-      transition: { repeat: Infinity, duration: 1.5 },
-    })
-  }, [arrowControls])
-
-  const handleSendClick = () => {
-    arrowControls.start({ x: 8, transition: { duration: 0.25 } })
-  }
+  const renderModeLabel = () => (
+    <AnimatePresence mode="wait">
+      <motion.p
+        key={mode}
+        className="text-xs text-zinc-400"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -10 }}
+        transition={{ duration: 0.3 }}
+      >
+        {isDevelop ? "Software Engineer" : "Designer Gráfico"}
+      </motion.p>
+    </AnimatePresence>
+  )
 
   return (
-    <header className="w-full pt-4  text-sm font-light">
+    <header className="w-full pt-4 text-sm font-light">
       <div className="flex flex-col gap-3 md:grid md:grid-cols-3 md:items-center md:gap-6">
         {/* MOBILE */}
         <div className="md:hidden mx-4 flex items-center justify-between rounded bg-zinc-900 px-4 py-4 border border-zinc-700/40">
@@ -85,24 +99,37 @@ export function Header() {
             />
             <div className="leading-tight">
               <h2 className="text-sm text-white">Gabriel Moura</h2>
-              <p className="text-xs text-zinc-400">Software Engineer</p>
+              {renderModeLabel()}
             </div>
           </div>
           <button
-            onClick={() => setIsCode(!isCode)}
-            className="flex h-9 w-16 items-center rounded-full bg-zinc-800 px-1 ring-1 ring-zinc-700/50"
+            onClick={toggleMode}
+            className="h-9 w-16 rounded-full bg-zinc-800 px-1 ring-1 ring-zinc-700/50 flex items-center justify-start"
           >
-            <motion.span
-              layout
-              transition={{ type: "spring", stiffness: 300, damping: 25 }}
-              className="grid h-7 w-7 place-items-center rounded-full bg-white text-zinc-900"
-            >
-              {isCode ? <Code2 size={16} /> : <Sun size={16} />}
-            </motion.span>
+            <div className="relative w-full h-7">
+              <motion.div
+                layout
+                transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                animate={{ x: isDevelop ? 0 : "100%" }}
+                className="absolute top-0 left-0 h-7 w-7 rounded-full bg-white text-zinc-900 grid place-items-center shadow"
+              >
+                <AnimatePresence mode="wait" initial={false}>
+                  <motion.div
+                    key={mode}
+                    initial={{ opacity: 0, scale: 0.6 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.6 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    {isDevelop ? <Code2 size={16} /> : <Pencil size={16} />}
+                  </motion.div>
+                </AnimatePresence>
+              </motion.div>
+            </div>
           </button>
         </div>
 
-        {/* COLUNA 1 */}
+        {/* COLUNA 1 */}
         <div className="hidden md:flex items-center gap-4 px-6 py-3">
           <Image
             src="/images/Icon_gm.png"
@@ -113,23 +140,36 @@ export function Header() {
             priority
           />
           <button
-            onClick={() => setIsCode(!isCode)}
-            className="flex h-9 w-16 items-center rounded-full bg-zinc-800 px-1"
+            onClick={toggleMode}
+            className="h-9 w-16 rounded-full bg-zinc-800 px-1 ring-1 ring-zinc-700/50 flex items-center justify-start"
           >
-            <motion.span
-              layout
-              transition={{ type: "spring", stiffness: 300, damping: 25 }}
-              className="grid h-7 w-7 place-items-center rounded-full bg-white text-zinc-900"
-            >
-              {isCode ? <Code2 size={16} /> : <Sun size={16} />}
-            </motion.span>
+            <div className="relative w-full h-7">
+              <motion.div
+                layout
+                transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                animate={{ x: isDevelop ? 0 : "100%" }}
+                className="absolute top-0 left-0 h-7 w-7 rounded-full bg-white text-zinc-900 grid place-items-center shadow"
+              >
+                <AnimatePresence mode="wait" initial={false}>
+                  <motion.div
+                    key={mode}
+                    initial={{ opacity: 0, scale: 0.6 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.6 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    {isDevelop ? <Code2 size={16} /> : <Pencil size={16} />}
+                  </motion.div>
+                </AnimatePresence>
+              </motion.div>
+            </div>
           </button>
           <div className="text-zinc-300 text-xs font-mono px-3 py-1 bg-zinc-800 rounded-full">
             {clock}
           </div>
         </div>
 
-        {/* COLUNA 2 */}
+        {/* COLUNA 2 */}
         <nav className="hidden md:flex whitespace-nowrap justify-center">
           <ul className="flex gap-10 text-xs">
             <NavLink href="/#page" label="Home" />
@@ -139,7 +179,7 @@ export function Header() {
           </ul>
         </nav>
 
-        {/* COLUNA 3 */}
+        {/* COLUNA 3 */}
         <div className="hidden md:flex justify-end">
           <Link
             href="mailto:seuemail@exemplo.com"
@@ -149,15 +189,12 @@ export function Header() {
               transition-colors select-none"
             onClick={handleSendClick}
           >
-            {/* brilho interno */}
             <motion.span
               initial={{ scale: 0 }}
               whileHover={{ scale: 3 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="absolute inset-0 bg-blue-500/10 rounded-full pointer-events-none"
             />
-
-            {/* corações animados */}
             {hearts.map(({ delay, size, xStart, duration }, i) => (
               <motion.span
                 key={i}
@@ -177,17 +214,19 @@ export function Header() {
                   viewBox="0 0 24 24"
                   className="w-full h-full fill-pink-500/60 text-pink-500/80"
                 >
-                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                  <path
+                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5
+                    2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09
+                    C13.09 3.81 14.76 3 16.5 3
+                    19.58 3 22 5.42 22 8.5
+                    c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                  />
                 </svg>
               </motion.span>
             ))}
-
-            {/* texto */}
             <span className="relative z-10 transition-colors duration-200 group-hover:text-blue-400">
               Send
             </span>
-
-            {/* seta */}
             <motion.svg
               initial={{ x: -5, stroke: "#d4d4d8" }}
               animate={arrowControls}

@@ -2,11 +2,12 @@
 import "./globals.css"
 import type { Metadata } from "next"
 import { ReactNode } from "react"
+import { ModeProvider } from "@/lib/ModeContext" // <-- importa o provider
 
 export const metadata: Metadata = {
   title: "GM | CREATIVE",
   description: "Portfólio profissional de design.",
-  metadataBase: new URL("https://gabrielmouradesigner.vercel.app"), // Minha meta data
+  metadataBase: new URL("https://gabrielmouradesigner.vercel.app"),
   keywords: [
     "Portfólio",
     "Web Design",
@@ -15,18 +16,17 @@ export const metadata: Metadata = {
     "Desenvolvimento",
   ],
   authors: [
-    { name: "Gabriel Moura|Creative", url: "https://gabrielmouradesigner.vercel.app/" },
+    {
+      name: "Gabriel Moura|Creative",
+      url: "https://gabrielmouradesigner.vercel.app/",
+    },
   ],
   openGraph: {
     title: "GM | CREATIVE | Portfólio",
-
     description:
       "Portfólio com foco em Desingner Creative, UX/UI e performance.",
-
     url: "https://gabrielmouradesigner.vercel.app/",
-
     siteName: "GM|CREATIVE",
-
     images: [
       {
         url: "/images/icon_gm.svg",
@@ -51,11 +51,12 @@ export const metadata: Metadata = {
   },
 }
 
-// ⚠️ Este componente precisa estar presente no layout.tsx
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="pt-BR">
-      <body>{children}</body>
+      <body>
+        <ModeProvider>{children}</ModeProvider>
+      </body>
     </html>
   )
 }
