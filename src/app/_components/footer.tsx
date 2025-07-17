@@ -193,7 +193,7 @@ export default function HeroSection() {
       </div>
 
       {/* DESKTOP */}
-      <div className="hidden md:grid md:grid-cols-2 gap-4 mt-6">
+      <div className="hidden md:grid md:grid-cols-2 gap-4 ">
         <motion.div
           onHoverStart={() => setHover(true)}
           onHoverEnd={() => setHover(false)}
