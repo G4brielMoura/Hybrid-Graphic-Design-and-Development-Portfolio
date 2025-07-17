@@ -39,7 +39,7 @@ export default function ProjectsMobileButton() {
             className="w-10 h-10 border border-zinc-600 bg-black rounded-full flex items-center justify-center"
           >
             <Image
-              src="/images/Icon_gm.svg"
+              src="/images/Icon_gm.png"
               alt="logo"
               width={28}
               height={28}
