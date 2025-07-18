@@ -6,7 +6,6 @@ import Directtwo from "./_components/directtwo";
 import Directthree from "./_components/directthree";
 import PageWrapper from "./_components/pagewrapper"
 export default function Home (){
-  
   return (
     <PageWrapper>
       <div className="max-w-screen-xl xl:max-w-[1102px] mx-auto  sm:px-6 lg:px-8">
@@ -14,13 +13,11 @@ export default function Home (){
           <Header />
           <Main />
           <Footer />
-          <Directone /> 
-          <Directtwo /> 
-          <Directthree /> 
-        </main>
+          <Directone />
+          <Directtwo />
+          <Directthree />
+         </main>
       </div>
-     
-    </PageWrapper>
-    
+      </PageWrapper>
   )
 }
