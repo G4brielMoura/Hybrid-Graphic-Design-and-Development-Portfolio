@@ -90,7 +90,7 @@ export function Header() {
         <div className="md:hidden mx-4 flex items-center justify-between rounded bg-zinc-900 px-4 py-4 border border-zinc-700/40">
           <div className="flex items-center gap-3">
             <Image
-              src="/images/Icon_gm.png"
+              src="/images/Profile2.jpg"
               alt="Gabriel Moura"
               width={42}
               height={42}
@@ -132,7 +132,7 @@ export function Header() {
         {/* COLUNA 1 */}
         <div className="hidden md:flex items-center gap-4 px-6 py-3">
           <Image
-            src="/images/Icon_gm.png"
+            src="/images/Profile2.jpg"
             alt="Gabriel Moura"
             width={44}
             height={44}
@@ -171,9 +171,10 @@ export function Header() {
 
         {/* COLUNA 2 */}
         <nav className="hidden md:flex whitespace-nowrap justify-center">
-          <ul className="flex gap-10 text-xs">
-            <NavLink href="/#page" label="Home" />
+          <ul className="flex gap-2 text-xs">
+            <NavLink href="/" label="Home" />
             <NavLink href="/portfolio" label="Portfólio" />
+            <NavLink href="/loja" label="Shop" />
             <NavLink href="/contacts" label="Contato" />
             <NavLink href="/about" label="About‑me" />
           </ul>
