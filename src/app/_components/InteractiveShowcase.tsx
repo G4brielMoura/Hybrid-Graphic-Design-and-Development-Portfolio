@@ -21,52 +21,52 @@ const footerLinks = [
 
 const socialLinks = [
   {
-    href: "https://www.instagram.com/gabrielmouradev/",
+    href: "#",
     icon: <FaInstagram />,
     color: "#E1306C",
-    label: "Instagram de Gabriel Moura",
+    label: "Instagram de Jimmy Harry",
     hoverEffect: { scale: 1.2, rotate: 5 },
   },
   {
-    href: "https://github.com/G4brielMoura",
+    href: "#",
     icon: <FaGithub />,
     color: "#ffffff",
-    label: "GitHub de Gabriel Moura",
+    label: "GitHub de Jimmy Harry",
     hoverEffect: { scale: 1.2, rotate: 5 },
   },
   {
-    href: "https://www.linkedin.com/in/gabrielmouradev/",
+    href: "#",
     icon: <FaLinkedin />,
     color: "#0077B5",
-    label: "LinkedIn de Gabriel Moura",
+    label: "LinkedIn de Jimmy Harry",
     hoverEffect: { scale: 1.2, rotate: -5 },
   },
   {
-    href: "https://www.youtube.com/@GabrielMouraDev",
+    href: "#",
     icon: <FaYoutube />,
     color: "#FF0000",
-    label: "YouTube de Gabriel Moura",
+    label: "YouTube de Jimmy Harry",
     hoverEffect: { scale: 1.2, rotate: -5 },
   },
   {
-    href: "https://www.behance.net/bielpereir",
+    href: "#",
     icon: <FaBehance />,
     color: "#0099ff",
-    label: "YouTube de Gabriel Moura",
+    label: "YouTube de Jimmy Harry",
     hoverEffect: { scale: 1.2, rotate: -5 },
   },
   {
-    href: "https://dribbble.com/Moura_Dev",
+    href: "#",
     icon: <FaDribbble />,
     color: "#ff00bf",
-    label: "YouTube de Gabriel Moura",
+    label: "YouTube de Jimmy Harry",
     hoverEffect: { scale: 1.2, rotate: -5 },
   },
   {
-    href: "https://www.tiktok.com/@gabrielmouradev",
+    href: "#",
     icon: <FaTiktok />,
     color: "#ffffff",
-    label: "YouTube de Gabriel Moura",
+    label: "YouTube de Jimmy Harry",
     hoverEffect: { scale: 1.2, rotate: -5 },
   },
 ]
@@ -88,10 +88,10 @@ export default function InteractiveShowCase() {
             Diga Olá
           </h2>
           <a
-            href="mailto:gabmoura.dev@gmail.com"
+            href="#"
             className="block select-none text-lg hover:underline transition"
           >
-            hello@gabrielmoura
+            hello@JimmyHarry
           </a>
        
         </motion.div>

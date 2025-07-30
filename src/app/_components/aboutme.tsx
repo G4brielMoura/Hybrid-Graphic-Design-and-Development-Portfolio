@@ -20,7 +20,7 @@ export default function AboutMe() {
         >
           {/* Foto */}
           <img
-            src="/images/gmok.webp"
+            src="/images/about.png"
             alt="Profile"
             className="w-60 h-60 object-cover border-4 border-gray-500 mb-6 rounded-md"
           />

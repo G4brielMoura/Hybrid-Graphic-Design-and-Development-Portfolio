@@ -47,17 +47,17 @@ const devLinks = [
   {
     label: "Entre em contato direto!",
     icon: SiWhatsapp,
-    url: "https://wa.me/98985638256",
+    url: "#",
   },
   {
     label: "Explore minha trajetória!",
     icon: SiLinkedin,
-    url: "https://www.linkedin.com/in/gabrielmouradev/",
+    url: "#",
   },
   {
     label: "Confira meus projetos!",
     icon: SiGithubAlt,
-    url: "https://github.com/G4brielMoura",
+    url: "#",
   },
 ]
 
@@ -65,17 +65,17 @@ const designLinks = [
   {
     label: "Portfólio no Behance!",
     icon: SiBehance,
-    url: "https://www.behance.net/bielpereir",
+    url: "#",
   },
   {
     label: "Vídeos no TikTok!",
     icon: SiTiktok,
-    url: "https://tiktok.com/@seuperfil",
+    url: "#",
   },
   {
     label: "Veja no Dribbble!",
     icon: SiDribbble,
-    url: "https://dribbble.com/Moura_Dev",
+    url: "#",
   },
 ]
 

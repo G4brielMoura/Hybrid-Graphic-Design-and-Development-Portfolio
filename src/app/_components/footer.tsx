@@ -22,31 +22,31 @@ const rotatingProjectsDev = [
   {
     title: "Wab Site Nince",
     subtitle: "Tech & Games Network",
-    url: "https://example.com/project1",
+    url: "#",
     description: "Do front‑end ao joystick, da IA aos lançamentos do ano.",
     techs: [
       { icon: <FaHtml5 />, color: "#E34F26" },
       { icon: <FaCss3Alt />, color: "#1572B6" },
       { icon: <FaJs />, color: "#F7DF1E" },
     ],
-    image: "/images/vintage1.jpg",
+    image: "/develope/projeto1.jpg",
   },
   {
     title: "Next Blog Platform",
     subtitle: "Conteúdo + API REST",
-    url: "https://example.com/project2",
+    url: "#",
     description: "Postagens com Next.js, MongoDB e painel de administração.",
     techs: [
       { icon: <FaHtml5 />, color: "#E34F26" },
       { icon: <FaCss3Alt />, color: "#1572B6" },
       { icon: <FaJs />, color: "#F7DF1E" },
     ],
-    image: "/images/vintage4.jpg",
+    image: "/develope/projeto2.jpg",
   },
   {
     title: "Landing Fintech",
     subtitle: "Pagamentos e UX",
-    url: "https://example.com/project3",
+    url: "#",
     description:
       "Landing page para fintech com foco em experiência do usuário.",
     techs: [
@@ -54,7 +54,7 @@ const rotatingProjectsDev = [
       { icon: <FaCss3Alt />, color: "#1572B6" },
       { icon: <FaJs />, color: "#F7DF1E" },
     ],
-    image: "/images/vintage6.jpg",
+    image: "/develope/projeto2.jpg",
   },
 ]
 
@@ -62,39 +62,47 @@ const rotatingProjectsDesign = [
   {
     title: "Brand Identity Kit",
     subtitle: "Visual Strategy",
-    url: "https://example.com/design1",
+    url: "#",
     description: "Criação de identidade visual completa para marca moderna.",
     techs: [],
-    image: "/images/logo1.jpg",
+    image: "/designer/graph1.jpg",
   },
   {
     title: "Behance Showcase",
     subtitle: "Portfólio criativo",
-    url: "https://behance.net/",
+    url: "#",
     description: "Apresentação visual com foco em layout e cor.",
     techs: [],
-    image: "/images/logo2.jpg",
+    image: "/designer/graph2.jpg",
   },
   {
     title: "Motion Graphics Reel",
     subtitle: "Vídeos animados",
-    url: "https://example.com/design3",
+    url: "#",
     description: "Animações promocionais para mídias sociais e vídeos.",
     techs: [],
-    image: "/images/logo3.jpg",
+    image: "/designer/graph3.jpg",
+  },
+  {
+    title: "Motion Graphics Reel",
+    subtitle: "Vídeos animados",
+    url: "#",
+    description: "Animações promocionais para mídias sociais e vídeos.",
+    techs: [],
+    image: "/designer/graph4.jpg",
   },
 ]
 
 const socialDev = [
-  { href: "https://wa.me/", icon: FaWhatsapp, color: "#25D366" },
-  { href: "https://linkedin.com/", icon: FaLinkedin, color: "#0A66C2" },
-  { href: "https://github.com/", icon: FaGithub, color: "#FFFFFF" },
+  { href: "#", icon: FaWhatsapp, color: "#25D366" },
+  { href: "#", icon: FaLinkedin, color: "#0A66C2" },
+  { href: "#", icon: FaGithub, color: "#FFFFFF" },
 ]
 
 const socialDesign = [
-  { href: "https://behance.net/", icon: FaBehance, color: "#1769FF" },
-  { href: "https://dribbble.com/", icon: FaDribbble, color: "#EA4C89" },
-  { href: "https://tiktok.com/", icon: FaTiktok, color: "#000000" },
+  { href: "#", icon: FaBehance, color: "#1769FF" },
+  { href: "#", icon: FaDribbble, color: "#EA4C89" },
+  { href: "#", icon: FaTiktok, color: "#000000" },
 ]
 
 export default function HeroSection() {
@@ -287,7 +295,7 @@ export default function HeroSection() {
             </motion.div>
           </Link>
           <div className="bg-zinc-800 mb-5 p-6 rounded-lg text-white">
-            <div className="font-extrabold text-3xl">GABRIEL MOURA</div>
+            <div className="font-extrabold text-3xl">JIMMY HARRY</div>
             <div className="text-sm mt-2">
               I'm a{" "}
               <span className="font-bold">

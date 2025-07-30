@@ -90,7 +90,7 @@ export function Header() {
         <div className="md:hidden mx-4 flex items-center justify-between rounded bg-zinc-900 px-4 py-4 border border-zinc-700/40">
           <div className="flex items-center gap-3">
             <Image
-              src="/images/Profile2.jpg"
+              src="/images/profile.png"
               alt="Gabriel Moura"
               width={42}
               height={42}
@@ -132,7 +132,7 @@ export function Header() {
         {/* COLUNA 1 */}
         <div className="hidden md:flex items-center gap-4 px-6 py-3">
           <Image
-            src="/images/Profile2.jpg"
+            src="/images/profile.png"
             alt="Gabriel Moura"
             width={44}
             height={44}
