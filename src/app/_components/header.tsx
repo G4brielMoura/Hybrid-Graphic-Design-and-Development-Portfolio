@@ -174,7 +174,6 @@ export function Header() {
           <ul className="flex gap-2 text-xs">
             <NavLink href="/" label="Home" />
             <NavLink href="/portfolio" label="Portfólio" />
-            <NavLink href="/loja" label="Shop" />
             <NavLink href="/contacts" label="Contato" />
             <NavLink href="/about" label="About‑me" />
           </ul>

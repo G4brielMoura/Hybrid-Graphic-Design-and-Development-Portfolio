@@ -1,6 +1,5 @@
 import  {Header} from "./_components/header"
 import Main  from "./_components/main"
-
 import Footer  from "./_components/footer"
 import Directone from "./_components/directone";
 import Directtwo from "./_components/directtwo";

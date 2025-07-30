@@ -13,11 +13,10 @@ import {
 
 const footerLinks = [
   { label: "Home", href: "/" },
-  { label: "Portfólio", href: "/loja" },
-  { label: "Shop", href: "/loja" },
+  { label: "Portfólio", href: "/portfolio" },
   { label: "Contato", href: "/contacts" },
   { label: "About-me", href: "/about" },
-  
+
 ]
 
 const socialLinks = [
