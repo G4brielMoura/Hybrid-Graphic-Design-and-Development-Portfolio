@@ -127,7 +127,7 @@ export default function InteractiveShowCase() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          © 2025 Gabriel Moura.
+          © 2025
         </motion.p>
 
         <motion.div

@@ -18,8 +18,16 @@ export default function CardProduto({ produto }: { produto: Produto }) {
   const handleCheckout = async () => {
     const res = await fetch("/api/checkout", {
       method: "POST",
-      body: JSON.stringify(produto),
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id: produto.id }),
+      cache: "no-store",
     })
+
+    if (!res.ok) {
+      console.error(await res.text())
+      alert("Falha ao iniciar o checkout.")
+      return
+    }
 
     const data = await res.json()
 
@@ -40,6 +48,7 @@ export default function CardProduto({ produto }: { produto: Produto }) {
       whileHover={{ scale: 1.015 }}
       className="bg-white dark:bg-zinc-900 rounded-xl shadow-md overflow-hidden transition-all duration-300 ease-in-out w-full max-w-sm mx-auto cursor-pointer"
     >
+      {/* Capa ou vídeo no hover */}
       <div className="relative w-full h-48 sm:h-56 md:h-60 lg:h-64 xl:h-72">
         {!hover ? (
           <motion.img
@@ -66,6 +75,7 @@ export default function CardProduto({ produto }: { produto: Produto }) {
         )}
       </div>
 
+      {/* Detalhes do produto */}
       <div className="p-4 flex flex-col gap-3">
         <h3 className="text-lg font-medium text-zinc-900 dark:text-zinc-100">
           {produto.nome}
@@ -76,6 +86,8 @@ export default function CardProduto({ produto }: { produto: Produto }) {
         <span className="text-green-600 dark:text-green-400 font-semibold text-base">
           R$ {(produto.preco / 100).toFixed(2)}
         </span>
+
+        {/* Botão de compra */}
         <motion.button
           whileTap={{ scale: 0.97 }}
           whileHover={{ scale: 1.005 }}
