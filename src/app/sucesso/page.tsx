@@ -1,10 +1,10 @@
-"use client"
-
-import { useSearchParams } from "next/navigation"
-
-export default function Sucesso() {
-  const search = useSearchParams()
-  const sessionId = search.get("session_id")
+// /app/sucesso/page.tsx (versão server)
+export default function SucessoPage({
+  searchParams,
+}: {
+  searchParams: { session_id?: string }
+}) {
+  const sessionId = searchParams.session_id
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-white dark:bg-zinc-950 p-6">
@@ -12,7 +12,6 @@ export default function Sucesso() {
         <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100">
           Compra realizada com sucesso! 🎉
         </h1>
-
         <p className="mt-4 text-zinc-700 dark:text-zinc-300">
           Obrigado por apoiar o projeto! Clique no botão abaixo para baixar seu
           pack:
