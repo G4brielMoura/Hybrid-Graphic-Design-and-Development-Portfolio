@@ -36,7 +36,7 @@ const devProjects = [
   {
     title: "Blog Ruby",
     subtitle: "Conteúdo dinâmico",
-    image: "/develope/projeto3.jpg",
+    image: "/develope/projeto3.png",
     url: "#",
     techs: [{ icon: <FaHtml5 />, color: "#E34F26" }],
     miniDescription: "Feito em Ruby on Rails e HTML.",
@@ -68,14 +68,7 @@ const designProjects = [
     techs: [{ icon: <FaFigma />, color: "#a259ff" }],
     miniDescription: "Layout para conversão de leads.",
   },
-  {
-    title: "Landing Design",
-    subtitle: "Interface moderna",
-    image: "/designer/graph4.jpg",
-    url: "#",
-    techs: [{ icon: <FaFigma />, color: "#a259ff" }],
-    miniDescription: "Layout para conversão de leads.",
-  },
+  
 ]
 
 export default function Portfolio() {
