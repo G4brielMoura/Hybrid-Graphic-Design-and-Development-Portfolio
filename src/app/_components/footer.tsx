@@ -193,18 +193,18 @@ export default function HeroSection() {
       </div>
 
       {/* DESKTOP */}
-      <div className="hidden md:grid md:grid-cols-2 gap-4 ">
+      <div className="hidden  md:grid md:grid-cols-2 gap-4 ">
         <motion.div
           onHoverStart={() => setHover(true)}
           onHoverEnd={() => setHover(false)}
-          className="relative w-full h-[500px] rounded-0 overflow-hidden bg-black shadow-lg"
+          className="relative w-full h-[500px] mb-5 rounded-0 overflow-hidden bg-black shadow-lg"
         >
           <Image
             src={project.image}
             alt={project.title}
             fill
             sizes="(min-width: 768px) 50vw"
-            className="object-cover"
+            className=" object-cover"
           />
           <AnimatePresence>
             {hovered && (
@@ -214,7 +214,7 @@ export default function HeroSection() {
                 animate={{ y: 0 }}
                 exit={{ y: "100%" }}
                 transition={{ duration: 0.4 }}
-                className="absolute bottom-0 left-0 w-full bg-zinc-800 text-white rounded-t-2xl px-6 py-4 grid grid-cols-2 gap-4"
+                className="absolute bottom-0 left-0  w-full bg-zinc-800 text-white rounded-t-2xl px-6 py-4 grid grid-cols-2 gap-4"
               >
                 <div className="flex flex-col justify-between">
                   <div>
@@ -286,7 +286,7 @@ export default function HeroSection() {
               →
             </motion.div>
           </Link>
-          <div className="bg-zinc-800 p-6 rounded-lg text-white">
+          <div className="bg-zinc-800 mb-5 p-6 rounded-lg text-white">
             <div className="font-extrabold text-3xl">GABRIEL MOURA</div>
             <div className="text-sm mt-2">
               I'm a{" "}
@@ -307,9 +307,9 @@ export default function HeroSection() {
           </div>
           <Link
             href="/about"
-            className="bg-zinc-800 hover:bg-zinc-700 p-6 rounded-lg relative"
+            className="bg-zinc-800 hover:bg-zinc-700 p-6 mb-5 rounded-lg relative"
           >
-            <div className="text-3xl font-extrabold text-white">ABOUT ME</div>
+            <div className="text-3xl  font-extrabold text-white">ABOUT ME</div>
             <motion.div
               whileTap={{ scale: 0.9 }}
               className="absolute bottom-6 right-6 text-white text-2xl"
