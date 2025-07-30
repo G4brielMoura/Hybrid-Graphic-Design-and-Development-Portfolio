@@ -5,34 +5,34 @@ import { ReactNode } from "react"
 import { ModeProvider } from "@/lib/ModeContext" // <-- importa o provider
 
 export const metadata: Metadata = {
-  title: "GM | CREATIVE",
+  title: "JH | CREATIVE",
   description: "Portfólio profissional de design.",
-  metadataBase: new URL("https://gabrielmouradesigner.vercel.app"),
+  // metadataBase: new URL("#"),
   keywords: [
-    "Portfólio",
-    "Web Design",
-    "Next.js",
-    "GMCreative",
-    "Desenvolvimento",
+    "#",
+    "#",
+    "#",
+    "#",
+    "#",
   ],
   authors: [
     {
       name: "Gabriel Moura|Creative",
-      url: "https://gabrielmouradesigner.vercel.app/",
+      // url: "#",
     },
   ],
   openGraph: {
-    title: "GM | CREATIVE | Portfólio",
+    title: "JH | CREATIVE | Portfólio",
     description:
       "Portfólio com foco em Desingner Creative, UX/UI e performance.",
-    url: "https://gabrielmouradesigner.vercel.app/",
-    siteName: "GM|CREATIVE",
+    // url: "#",
+    siteName: "JH|CREATIVE",
     images: [
       {
-        url: "/images/icon_gm.svg",
+        url: "#",
         width: 1200,
         height: 630,
-        alt: "Imagem de capa GMCreative",
+        alt: "Imagem de capa JHCreative",
       },
     ],
     locale: "pt_BR",

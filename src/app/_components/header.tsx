@@ -91,14 +91,14 @@ export function Header() {
           <div className="flex items-center gap-3">
             <Image
               src="/images/profile.png"
-              alt="Gabriel Moura"
+              alt="Jimmy Harry"
               width={42}
               height={42}
               className="rounded-full border border-zinc-600 object-cover"
               priority
             />
             <div className="leading-tight">
-              <h2 className="text-sm text-white">Gabriel Moura</h2>
+              <h2 className="text-sm text-white">Jimme Harry</h2>
               {renderModeLabel()}
             </div>
           </div>
@@ -133,7 +133,7 @@ export function Header() {
         <div className="hidden md:flex items-center gap-4 px-6 py-3">
           <Image
             src="/images/profile.png"
-            alt="Gabriel Moura"
+            alt="Jimme Harry"
             width={44}
             height={44}
             className="rounded-full border border-zinc-500 object-cover"

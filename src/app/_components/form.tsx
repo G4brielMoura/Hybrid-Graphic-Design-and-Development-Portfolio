@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useRef, useState, useEffect } from "react"
-import emailjs from "@emailjs/browser"
+// import emailjs from "@emailjs/browser"
 
 const AnimatedTitle = () => {
   const phrases = [
@@ -58,22 +58,22 @@ export default function Form() {
     e.preventDefault()
     if (!form.current) return
 
-    emailjs
-      .sendForm(
-        "service_1no2exi",
-        "template_sm8w3wa",
-        form.current,
-        "IXGAAonzug-tVRsN4"
-      )
-      .then(() => {
-        setStatus("success")
-        setShowMessage(true)
-        form.current?.reset()
-      })
-      .catch(() => {
-        setStatus("error")
-        setShowMessage(true)
-      })
+    // emailjs
+    //   .sendForm(
+    //     "service_1no2exi",
+    //     "template_sm8w3wa",
+    //     form.current,
+    //     "SUA KEY AQUI DO EMAIL JS"
+    //   )
+    //   .then(() => {
+    //     setStatus("success")
+    //     setShowMessage(true)
+    //     form.current?.reset()
+    //   })
+    //   .catch(() => {
+    //     setStatus("error")
+    //     setShowMessage(true)
+    //   })
   }
 
   useEffect(() => {
