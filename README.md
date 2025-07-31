@@ -1,6 +1,6 @@
 ### 📌 Hybrid Graphic Design and Development Portfolio
 
-Este projeto é um portfólio híbrido moderno que une **Design Criativo** com **Desenvolvimento Front-End**, construído com **Next.js 13 (App Router)**, **TypeScript**, **TailwindCSS** e **Framer Motion**.
+Este projeto é um portfólio híbrido moderno que une **Design Criativo** com **Desenvolvimento Front-End**, construído com **Next.js 15 (App Router)**, **TypeScript**, **TailwindCSS** e **Framer Motion**.
 
 O objetivo é apresentar projetos, experiências e habilidades de forma dinâmica, com foco tanto na estética visual quanto na performance de desenvolvimento. O projeto possui um **modo interativo** que alterna entre dois contextos (Design e Desenvolvimento), destacando a versatilidade do autor.
 
@@ -70,7 +70,7 @@ Componentes específicos para as seções, isolando responsabilidades e facilita
 
 | Tecnologia     | Papel                                                    |
 |----------------|-----------------------------------------------------------|
-| Next.js 13     | Estrutura principal da aplicação                          |
+| Next.js 15     | Estrutura principal da aplicação                          |
 | React          | Biblioteca base de UI                                     |
 | TypeScript     | Tipagem estática e robustez no desenvolvimento            |
 | TailwindCSS    | Estilização rápida e responsiva com classes utilitárias   |
