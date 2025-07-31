@@ -6,6 +6,12 @@ O objetivo é apresentar projetos, experiências e habilidades de forma dinâmic
 
 ---
 
+<p align="center">
+  <img alt="Hybrid Graphic Design and Development Portfolio" src="#" width="100%">
+</p>
+
+---
+
 ### 📌 Funcionalidades Principais
 
 - **Switch de Modo (Toggler)**: alterna dinamicamente entre informações voltadas para design e desenvolvimento, usando context API.
