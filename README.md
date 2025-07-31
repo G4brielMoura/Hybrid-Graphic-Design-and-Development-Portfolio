@@ -7,7 +7,7 @@ O objetivo é apresentar projetos, experiências e habilidades de forma dinâmic
 ---
 
 <p align="center">
-  <img alt="Hybrid Graphic Design and Development Portfolio" src=".github/projeto.jpg" width="100%">
+  <img alt="Hybrid Graphic Design and Development Portfolio" src=".github/preview.jpg" width="100%">
 </p>
 
 ---
