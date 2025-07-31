@@ -158,7 +158,13 @@ Estudante de Ciência da Computação, apaixonado por desenvolvimento web modern
 </p>
 
 ---
+### 📌 Deploy
+
+[![Ver no Navegador](https://img.shields.io/badge/👀%20Ver%20Projeto%20Online-000?style=for-the-badge&logo=vercel&logoColor=white)](https://hybridgraphicdesignanddevelopmentportfolio.vercel.app/)
+
+---
 
 ### 📌 Contribuições
 * Sinta-se à vontade para sugerir melhorias, abrir issues ou fazer um fork! Este projeto é uma vitrine e também um campo de testes para novas ideias criativas e técnicas.
 
+---
