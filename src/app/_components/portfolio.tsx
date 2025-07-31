@@ -41,9 +41,66 @@ const devProjects = [
     techs: [{ icon: <FaHtml5 />, color: "#E34F26" }],
     miniDescription: "Feito em Ruby on Rails e HTML.",
   },
+  {
+    title: "Landing Page",
+    subtitle: "Institucional moderna",
+    image: "/develope/projeto1.jpg",
+    url: "#",
+    techs: [
+      { icon: <FaReact />, color: "#61DAFB" },
+      { icon: <SiNextdotjs />, color: "#fff" },
+      { icon: <SiTailwindcss />, color: "#38BDF8" },
+    ],
+    miniDescription: "Feita com React, Next.js e Tailwind.",
+  },
+  {
+    title: "E-commerce",
+    subtitle: "Loja virtual completa",
+    image: "/develope/projeto2.jpg",
+    url: "#",
+    techs: [
+      { icon: <FaHtml5 />, color: "#E34F26" },
+      { icon: <FaJs />, color: "#F7DF1E" },
+      { icon: <SiTailwindcss />, color: "#38BDF8" },
+    ],
+    miniDescription: "Carrinho, checkout e painel admin.",
+  },
+  {
+    title: "Blog Ruby",
+    subtitle: "Conteúdo dinâmico",
+    image: "/develope/projeto3.png",
+    url: "#",
+    techs: [{ icon: <FaHtml5 />, color: "#E34F26" }],
+    miniDescription: "Feito em Ruby on Rails e HTML.",
+  },
 ]
 
 const designProjects = [
+  {
+    title: "Identidade Visual",
+    subtitle: "Marca & Branding",
+    image: "/designer/graph1.jpg",
+    url: "#",
+    techs: [{ icon: <FaFigma />, color: "#a259ff" }],
+    miniDescription: "Criação de logotipo e guia visual.",
+  },
+  {
+    title: "UI App Fitness",
+    subtitle: "Mobile Experience",
+    image: "/designer/graph2.jpg",
+    url: "#",
+    techs: [{ icon: <FaFigma />, color: "#a259ff" }],
+    miniDescription: "Protótipo interativo no Figma.",
+  },
+  {
+    title: "Landing Design",
+    subtitle: "Interface moderna",
+    image: "/designer/graph3.jpg",
+    url: "#",
+    techs: [{ icon: <FaFigma />, color: "#a259ff" }],
+    miniDescription: "Layout para conversão de leads.",
+  },
+  
   {
     title: "Identidade Visual",
     subtitle: "Marca & Branding",
